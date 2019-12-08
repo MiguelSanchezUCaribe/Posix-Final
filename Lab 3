@@ -1,0 +1,189 @@
+#!/bin/bash
+echo "LAB 3 - Copiar, renombrar, borrar archivos"
+echo "Ingreso el comando de acuerdo a la instrucción"
+echo -e "Si el comando es correcto se mostrará el output\n"
+
+while true
+do
+        echo "4. Despliega en pantalla el uso del disco de la carpeta actual"
+        read a1
+        if [ $a1 = "du" ]
+        then
+                $a1
+                break
+fi
+done
+while true
+do
+        echo "2. Despliega en pantalla el uso del disco de la carpeta actual en un formato legible"
+        read a2
+        if [[ $a2 = "du -xh ~" ]]
+        then
+                du -xh ~
+                break
+fi
+done
+echo -e "\n Este comando podría tardar en carpetas de gran tamaño, asi que puedes optar por el parametro --max-depth du --max-depth 3 ~\n"
+
+while true
+do
+        echo "3. Copia el archivo hello.txt a la carpeta dir2 usando el parametro verbose"
+        read a3
+        if [[ $a3 = "cp -v hello.txt dir2" ]]
+        then
+                $a3
+                break
+fi
+done
+while true
+do
+        echo "4. Copia y renombra el archivo hello.txt a dir2/file2.txt usando el parametro verbose"
+        read a4
+        if [[ $a4 = "cp -v hello.txt dir2/file2.txt" ]]
+        then
+                $a4
+                break
+fi
+done
+while true
+do
+        echo "5. Copia todos los archivos con la extensión .txt de la carpeta dir2 a la carpeta dir2/dir3"
+        read a5
+        if [[ $a5 = "cp -vr dir2/*.txt dir2/dir3" ]]
+        then
+                $a5
+                break
+fi
+done
+while true
+do
+        echo "6. Copia la carpeta dir2/dir3 al directorio actual"
+        read a6
+        if [[ $a6 = "cp -vr dir2/dir3 ." ]]
+        then
+                $a6
+                break
+fi
+done
+while true
+do
+ echo "7. Muestra el contenido de la carpeta actual"
+        read a7
+        if [ $a7 = "ls" ]
+        then
+                $a7
+                break
+fi
+done
+while true
+do
+        echo "8. Verifica la integridad de los archivo copiado hello.txt"
+        read a8
+        read a9
+        if [[ $a8 = "md5sum hello.txt" && $a9 = "md5sum dir2/hello.txt" ]]
+        then
+                $a8
+                $a9
+                break
+fi
+done
+while true
+do
+        echo "9. Mueve el archivo hello.txt a dir2/dir3/dir4/hi.txt"
+        read a10
+        if [[ $a10 = "mv hello.txt dir2/dir3/dir4/hi.txt" ]]
+        then
+                $a10
+                break
+fi
+done
+while true
+do
+        echo "10. Muestra el contenido de la carpeta dir4 desde dir2"
+        read a11
+        if [[ $a11 = "ls dir2/dir3/dir4" ]]
+        then
+                $a11
+                break
+fi
+done
+while true
+do
+        echo "11. Crear la carpeta dir5"
+        read a12
+        if [[ $a12 = "mkdir dir5" ]]
+        then
+                $a12
+                break
+fi
+done
+while true
+do
+        echo "12. Mueve todos los archivos de texto en dir2 hacia dir5"
+        read a13
+        if [[ $a13 = "mv dir2/*.txt dir5" ]]
+        then
+                $a13
+                break
+fi
+done
+while true
+do
+        echo "13. Renombra la carpeta dir5 a dir50"
+        read a14
+        if [[ $a14 = "mv dir5 dir50" ]]
+        then
+                $a14
+                break
+fi
+done
+while true
+do
+        echo "14. Crea un enlace llamado \"hello\" desde el directorio actual hacia dir2/dir3/dir4/hi.txt"
+        read a15
+        if [[ $a15 = "ln dir2/dir3/dir4/hi.txt hello" ]]
+        then
+                $a15
+                break
+fi
+done
+while true
+do
+        echo "15. Crea un acceso directo llamado \"Softlink\" desde el directorio actual hacia"
+        read a16
+        if [[ $a16 = "ln -s dir2/dir3/dir4/hi.txt softlink" ]]
+        then
+                $a16
+                break
+fi
+done
+while true
+do
+        echo "16. Elimina el archivo file2.txt de forma interactiva"
+        read a17
+        if [[ $a17 = "rm -i file2.txt" ]]
+        then
+                $a17
+                break
+fi
+done
+while true
+do
+        echo "17. Elimina de forma interactiva y recursiva el contenido de dir5"
+        read a18
+        if [[ $a18 = "rm -ir dir50/*" ]]
+        then
+                $a18
+                break
+fi
+done
+while true
+do
+        echo "18. Elimina el directorio dir50"
+        read a19
+        if [[ $a19 = "rmdir dir50" ]]
+        then
+                $a19
+                break
+fi
+done
