@@ -1,0 +1,171 @@
+#!/bin/bash
+echo "LAB 4 - Comandos básicos para administrar procesos"
+kik="kill"
+kik2="kill -9"
+kik3="killall"
+spl="sleep"
+while true
+do
+        echo "1. Ejecuta el comando ps y analiza su salida"
+        read a1
+        if [ $a1 = "ps" ]
+        then
+                $a1
+                break
+fi
+done
+while true
+do
+        echo "2. Crea un nuevo proceso"
+        read a2
+        if [[ $a2 = "sleep 60 &" ]]
+        then
+                sleep 60 &
+                break
+fi
+done
+while true
+do
+        echo "3. Ejecuta ps y analiza su salida"
+        read a3
+        if [ $a3 = "ps" ]
+        then
+                $a3
+                break
+fi
+done
+while true
+do
+        echo "Dame el ID del proceso creado"
+        read pros
+        break
+done
+while true
+do
+        echo "4. Mata el proceso creado en el paso dos"
+        read a4
+        kik="$kik $pros"
+        if [[ $a4 = "${kik}" ]]
+        then
+                $kik
+                break
+fi
+done
+while true
+do
+        echo "5. Verifica con ps si el proceso sigue vivo"
+        read a5
+        if [ $a5 = "ps" ]
+        then
+                $a5
+                break
+fi
+done
+while true
+do
+        echo "6. Crea otro proceso"
+        read a6
+        if [[ $a6 = "sleep 60 &" ]]
+        then
+                sleep 60 &
+                break
+fi
+done
+while true
+do
+        echo "Ejecuta ps y dame el ID del proceso"
+        read a7
+        if [[ $a7 = "ps" ]]
+        then
+                $a7
+                read pros2
+                break
+fi
+done
+while true
+do
+        echo "7. Obliga al proceso morir enviando la señal -9"
+        read a8
+        kik2="$kik2 $pros2"
+        if [[ $a8 = "${kik2}" ]]
+        then
+                $kik2
+                break
+fi
+done
+while true
+do
+        echo "8. Verifica si el proceso sigue vivo"
+        read a9
+        if [ $a9 = "ps" ]
+        then
+                $a9
+                break
+fi
+done
+while true
+do
+        echo "9. Inicia dos procesos más con el valor \"30\""
+        read a10
+        read a11
+        if [[ $a10 = "sleep 30 &" && $a11 = "sleep 30 &" ]]
+        then
+                sleep 30 &
+                sleep 30 &
+                break
+fi
+done
+while true
+do
+        echo "Verifica si el proceso sigue vivo"
+        read a12
+        if [ $a12 = "ps" ]
+        then
+                $a12
+                break
+fi
+done
+while true
+do
+        echo "Obten el PID del proceso bash"
+        read a12
+        read a13
+        if [[ $a12 = "pidof bash" && $a13 = "pidof -s bash" ]]
+        then
+                $a12
+                $a13
+                break
+fi
+done
+while true
+do
+        echo "Utiliza el comando top para visualizar los procesos"
+        read a14
+        if [ $a14 = "top" ]
+        then
+                $a14
+                break
+fi
+done
+while true
+do
+        echo "Utiliza el comando pstree y analiza su salida"
+        read a15
+        read a16
+        if [[ $a15 = "pstree" && $a16 = "pstree -p" ]]
+        then
+                $a15
+                $a16
+                break
+fi
+done
+while true
+do
+        echo "Verifica el tiempo que tarda en ejecutarse un comando"
+        read a17
+        if [[ $a17 = "time ls -l" ]]
+        then
+                $a12
+                break
+fi
+done
