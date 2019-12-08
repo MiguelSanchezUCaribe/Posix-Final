@@ -1,0 +1,104 @@
+#!/bin/bash
+echo "LAB 5 - Manipular o parsear contenido de archivos"
+while true
+do
+        echo "1. Buscar la palabra \"linux\" en el archivo hello"
+        read r1
+                if [[ $r1 = 'grep "linux" hello' ]]
+                then
+                        grep "linux" hello
+                        break
+                fi
+done
+while true
+do
+        echo "2. Buscar la palabra \"Hello\" en toda la carpeta actual"
+        read r2
+                if [[ $r2 = 'grep -r "Hello" .' ]]
+                then
+                        grep -r "Hello" .
+                        break
+                fi
+done
+while true
+do
+        echo "3. Buscar la palabra \"linux\" en el archivo hello, imprimiendo el número de linea del archivo"
+        read r3
+                if [[ $r3 = 'grep -n "linux" hello' ]]
+                then
+                        grep -n "linux" hello
+                        break
+                fi
+done
+while true
+do
+        echo "4. Despliega las lineas que no coinciden con el patrón de busqueda"
+        read r4
+                if [[ $r4 = 'grep -v "world" hello' ]]
+                then
+                        grep -v "world" hello
+                        break
+                fi
+done
+while true
+do
+        echo "5. Encuentra la linea más larga dentro del archivo hello"
+        read r5
+                if [[ $r5 = 'wc -L hello' ]]
+                then
+                        $r5
+                        break
+                fi
+done
+while true
+do
+        echo "7. Muestra solo la primera columna del archivo new.txt"
+        read r8
+                if [[ $r8 = "cut -f1 -d' ' new.txt" ]]
+                then
+                        $r8
+                        break
+                fi
+done
+while true
+do
+        echo "8. Extrae la tercer columna del archivo new.txt"
+        read r9
+                if [[ $r9 = "cut -f3 -d' ' new.txt" ]]
+                then
+                        $r9
+                        break
+                fi
+done
+while true
+do
+        echo "9. Mezcla las lineas de los archivos hello.txt y new.txt"
+        read r10
+        read r11
+                if [[ $r10 = "paste hello new.txt" && $r11 = "paste -s hello new.txt" ]]
+                then
+                        $r10
+                        $r11
+                        break
+                fi
+done
+while true
+do
+        echo "10. Ordena el contenido del archivo new.txt"
+        read r12
+                if [[ $r12 = "sort new.txt" ]]
+                then
+                        $r12
+                        break
+                fi
+done
+while true
+do
+        echo "11. Compara el contenido del archivo hello y linux.txt"
+        read r13
+                if [[ $r13 = "diff hello linux.txt" ]]
+                then
+                        $r13
+                        break
+                fi
+done
