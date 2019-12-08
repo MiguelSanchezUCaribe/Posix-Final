@@ -1,0 +1,165 @@
+#!/bin/bash
+#Segundo lab
+
+echo "LAB 2 - Crear archivos. Desplegar su contenido y estadisticas."
+echo "Ingreso el comando de acuerdo a la instrucción"
+echo -e "Si el comando es correcto se mostrará el output\n"
+var1="echo "linux""
+var2="echo "world""
+var3="echo "hello""
+
+while true
+do
+        echo "1. Crear el archivo file1.txt (hint: touch)"
+        read a1
+        if [[ $a1 = "touch file1.txt" ]]
+        then
+                $a1
+                break
+fi
+done
+while true
+do
+        echo "2. Cambia el timestamp del archivo file1.txt"
+        read a2
+        if [[ $a2 = "touch file1.txt" ]]
+        then
+                $a2
+                break
+fi
+done
+while true
+do
+        echo "3. Crear el archivo file2.txt"
+        read a3
+        if [[ $a3 = "touch file2.txt" ]]
+        then
+                $a3
+                break
+fi
+done
+while true
+do
+        echo "4. Despliega el contenido del directorio actual usando un comando diferente a ls"
+        read a4
+        if [ $a4 = "dir" ]
+        then
+                $a4
+                break
+fi
+done
+echo -e "\n dir es equivalente a ls -C -b"
+sleep 5
+while true
+do
+        echo "5. Limpia el contenido de la terminal"
+        read a5
+        if [ $a5 = "clear" ]
+        then
+                $a5
+                break
+fi
+done
+while true
+do
+        echo "6. Despliega el texto \"hello\" "
+        read a6
+        if [[ $a6 = 'echo "hello"' ]]
+        then
+                $var3
+                break
+fi
+done
+while true
+do
+        echo "7. Redirige la salida del comando anterior hacia un archivo con el mismo nombre y extensión .txt"
+        read a7
+        if [[ $a7 = 'echo "hello" > hello.txt' ]]
+        then
+                $a7
+                $var3 > hello.txt
+                break
+fi
+done
+while true
+do
+        echo "8. Adjunta el texto \"linux\" al archivo hello.txt"
+        read a8
+        if [[ $a8 = 'echo "linux" >> hello.txt' ]]
+        then
+                $a8
+                $var1 >> hello.txt
+                break
+fi
+done
+while true
+do
+        echo '9. Adjunta el texto "world" al archivo hello.txt'
+        read a9
+        if [[ $a9 = 'echo "world" >> hello.txt' ]]
+        then
+                $a9
+                $var2 >> hello.txt
+                break
+fi
+done
+while true
+do
+        echo "10. Despliega en la pantalla en el contenido del archivo hello.txt"
+        read a10
+        if [[ $a10 = "cat hello.txt" ]]
+        then
+                $a10
+                break
+fi
+done
+while true
+do
+        echo "11. Despliega en la pantalla el contenido del archivo hello.txt usando el comando head"
+        read a11
+        if [[ $a11 = "head hello.txt" ]]
+        then
+                $a11
+                break
+fi
+done
+while true
+do
+        echo "12. Despliega solo las últimas dos lineas del archivo hello.txt"
+        read a12
+        if [[ $a12 = "tail -2 hello.txt" ]]
+        then
+                $a12
+                break
+fi
+done
+while true
+do
+        echo "13. Despliega las últimas lineas del archivo hello.txt"
+        read a13
+        if [[ $a13 = "tail hello.txt" ]]
+        then
+                $a13
+                break
+fi
+done
+while true
+do
+        echo "14. Muestra las estadisticas para el archivo hello.txt"
+        read a14
+        if [[ $a14 = "stat hello.txt" ]]
+        then
+                $a14
+                break
+fi
+done
+while true
+do
+        echo "15. Muestra las estadisticas para la carpeta dir1"
+        read a15
+        if [[ $a15 = "stat dir1" ]]
+        then
+                $a15
+                break
+fi
+done
